@@ -3,6 +3,72 @@
     <head>
     	<meta charset="utf-8">
         <title>Minha primeira pagina</title>
+		<link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+		<!--<link rel="stylesheet" href="style.css">-->
+		<style type="text/css">
+
+			#container {
+				font-family: Arial, Verdana, sans-serif;
+				width: 80%;
+				margin: 0 auto;
+				text-align:left;
+			}
+
+			#container ul li {
+				display:inline;
+				
+			}
+
+			ul li a {
+				text-decoration:none;
+			}
+
+			ul li a:hover {
+				background-color: red;
+				color:white;
+			}
+
+			h1 {
+				text-align:center;
+				font-size: 18px;
+				font-weight:bold;
+				padding:5px;
+			}
+
+			section {
+				float: left;
+				width:68%;
+				padding:3px;
+			}
+
+			section h2 {
+				font-size: 16px;
+				font-weight:bold;
+				text-align:center;
+			}
+
+			section h3 {
+				font-size: 13px;
+				font-weight:bold;
+				text-align:left;
+			}
+
+
+			section p {
+				font-size: 9px;
+				text-align:justify;
+			}
+			aside {
+				width:30%;
+				float:left;				
+			}
+
+			footer {
+				height:75px;
+				clear:both;
+			}
+
+		</style>
     </head>
     <body>
 		<div id="container">
@@ -24,19 +90,21 @@
 			</header>
 			<section id="main">
 				<h2>Notícias</h2>
-				<article>
+				<article class="noticia">
 					<h3>Notícia 1</h3>
+					<p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
 				</article>
-				<article>
+				<article class="noticia">
 					<h3>Notícia 2</h3>
+					<p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
 				</article>
 			</section>
 			<aside>
 				<form action="" method="post">
 					<fieldset>
 						<legend>Busca</legend>
-						<input type="text" value="" placeholder="Digite o termo" name="busca">
-						<button>OK</button>
+						<label for="busca">Digite:</label><input type="search" size="10" onkeypress="article()" value="" placeholder="Digite o termo" name="busca">
+						<button onclick="article()">OK</button>
 					</fieldset>
 				</form>
 			</aside>
@@ -44,5 +112,16 @@
 				Copyright &copy; 2015 - Desenvolvimento Web
 			</footer>	
 		</div>
+		<script type="text/javascript">
+
+		window.onload = function() {
+			var nome = prompt("Digite seu nome");
+			document.getElementsByTagName("h1")[0].innerHTML = "Seja bem vindo " + nome.toUpperCase() + "!!!";
+		}
+
+		function article() {
+			console.log("Vc clicou em um elemento article");
+		}
+		</script>
     </body>
 </html>
